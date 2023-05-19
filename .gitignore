@@ -8,7 +8,9 @@
 # testing
 /coverage
 
-
+# building
+/build
+todolist/build
 
 # misc
 .DS_Store
