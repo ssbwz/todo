@@ -48,7 +48,7 @@ function TodoItemsList() {
         console.log("I checked")
         console.log("maxHeight:" + maxHeight)
         console.log("pageHeight:" + pageHeight)
-        if (pageWidth > 541) {
+        if (pageWidth > 541 && todoList !== undefined) {
             if (pageHeight > maxHeight) {
                 navbar.style.height = '100%';
             } else {
