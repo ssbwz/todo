@@ -1,0 +1,47 @@
+.todoItemsList {
+    background-color: #F1F1F1;
+    padding: 20px 10px 20px 10px;
+    margin-top: 50px;
+    border-radius: 30px;
+    margin-left: 25%;
+    position: relative;
+}
+
+@media (max-width: 426px) {
+    .todoItemsList {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1026px) and (min-width: 426px) {
+    .todoItemsList {
+        margin-left: 12.5%;
+    }
+
+}
+
+.addTodoItemButton {
+    padding-top: 0;
+}
+
+.todoList {
+    border-radius: 15px;
+    background-color: #6665DD;
+}
+
+.todoItem {
+
+    background-color: #F1F1F1;
+    padding: 1px;
+    border-radius: 0 15px;
+}
+
+
+.todoItemEditable {
+    background-color: #cdcdcd;
+    border-radius: 0 15px;
+}
+
+#standard-basic {
+    background-color: #cdcdcd;
+}
