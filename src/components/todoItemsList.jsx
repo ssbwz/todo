@@ -9,8 +9,6 @@ import TextField from '@mui/material/TextField';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 
-import Typography from '@mui/material/Typography';
-
 import IconButton from '@mui/material/IconButton';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
@@ -45,14 +43,11 @@ function TodoItemsList() {
         var pageWidth = document.querySelector('.App').offsetWidth;
 
         var maxHeight = window.innerHeight;
-        console.log("I checked")
-        console.log("maxHeight:" + maxHeight)
-        console.log("pageHeight:" + pageHeight)
-        if (pageWidth > 541 && todoList !== undefined) {
+        if (pageWidth > 541) {
             if (pageHeight > maxHeight) {
                 navbar.style.height = '100%';
             } else {
-                navbar.style.height = '98.2vh';
+                navbar.style.height = '97.8vh';
             }
         }
 
