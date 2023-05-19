@@ -9,6 +9,8 @@ import TextField from '@mui/material/TextField';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 
+import Typography from '@mui/material/Typography';
+
 import IconButton from '@mui/material/IconButton';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
@@ -16,7 +18,8 @@ import Checkbox from '@mui/material/Checkbox';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 
-import SaveAltOutlinedIcon from '@mui/icons-material/SaveAltOutlined';
+
+import SaveIcon from '@mui/icons-material/Save';
 
 import { Grid } from '@mui/material';
 // initializing id of the todo items
@@ -42,7 +45,9 @@ function TodoItemsList() {
         var pageWidth = document.querySelector('.App').offsetWidth;
 
         var maxHeight = window.innerHeight;
-
+        console.log("I checked")
+        console.log("maxHeight:" + maxHeight)
+        console.log("pageHeight:" + pageHeight)
         if (pageWidth > 541) {
             if (pageHeight > maxHeight) {
                 navbar.style.height = '100%';
@@ -203,12 +208,14 @@ function TodoItemsList() {
                                 className='todoItem'
                                 key={item.id}>
 
-                                <Grid item lg={8} sm={12} xs={12} md={12}>
+                                <Grid item lg={1} sm={1} xs={1} md={1}>
                                     <Checkbox checked={item.checked} onChange={e => checkItem(e.target.checked, item.id)} />
+
+                                </Grid>
+                                <Grid item style={{ textAlign: "start" }} marginTop={"8px"} paddingLeft={"14px"} lg={7} sm={7} xs={7} md={7}>
                                     {item.text}
                                 </Grid>
-
-                                <Grid item lg={4} sm={12} xs={12} md={12}>
+                                <Grid item lg={4} sm={4} xs={4} md={4}>
                                     <IconButton aria-label="edit" onClick={e => switchInputType(e, item.id)} >
                                         <ModeEditOutlineOutlinedIcon htmlColor='#6665dd' />
                                     </IconButton>
@@ -223,23 +230,25 @@ function TodoItemsList() {
                     else {
                         return <>
                             <Grid item
-                             lg={11} sm={11} xs={11} md={11}>
-                                <Grid container 
-                                margin={1} 
-                                className='todoItemEditable'
-                                 key={item.id}>
-
-                                    <Grid item lg={8} sm={12} xs={12} md={12}>
+                                lg={11} sm={11} xs={11} md={11}>
+                                <Grid container
+                                    margin={"0.6"}
+                                    className='todoItemEditable'
+                                    key={item.id}>
+                                    <Grid item lg={1} sm={1} xs={1} md={1}>
                                         <Checkbox checked={item.checked} onChange={e => checkItem(e.target.checked, item.id)} />
+                                    </Grid>
+
+                                    <Grid item style={{ textAlign: "start" }} marginTop={"8px"} paddingLeft={"14px"} lg={7} sm={7} xs={7} md={7}>
                                         <TextField id="standard-basic"
                                             label="todo task"
                                             multiline
                                             defaultValue={item.text} onChange={e => setUpdatedText(e.target.value)} variant="standard" />
                                     </Grid>
 
-                                    <Grid item lg={4} sm={12} xs={12} md={12}>
+                                    <Grid item lg={4} sm={4} xs={4} md={4}>
                                         <IconButton aria-label="edit" onClick={e => updatingText(e, item)}>
-                                            <SaveAltOutlinedIcon htmlColor='#6665dd' />
+                                            <SaveIcon htmlColor='#6665dd' />
                                         </IconButton>
                                         <IconButton aria-label="delete" onClick={e => removeItem(e, item.id)}>
                                             <DeleteForeverOutlinedIcon htmlColor='#6665dd' />
