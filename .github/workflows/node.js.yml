@@ -22,6 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build
+      
         run: npm run build
 
       - name: Deploy to GitHub Pages
@@ -29,4 +30,5 @@ jobs:
         with:
           branch: gh-pages
           folder: build
+          token: SHA256:Z+qGsT30DvBQTxi2nb2sgqSC+hjz4VNrKGaXn1Ck4vo
 
